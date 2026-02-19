@@ -1,0 +1,5 @@
+.venv/
+mlruns/
+__pycache__/
+*.pyc
+pred_plot.png

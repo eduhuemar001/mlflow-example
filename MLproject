@@ -1,0 +1,32 @@
+name: mlflow-example
+
+python_env: python_env.yaml
+
+entry_points:
+  train:
+    parameters:
+      C: {type: float, default: 1.0}
+      max_iter: {type: int, default: 200}
+      test_size: {type: float, default: 0.2}
+      random_state: {type: int, default: 42}
+      experiment_name: {type: str, default: "mlflow-demo"}
+    command: >
+      python train.py
+      --C {C}
+      --max-iter {max_iter}
+      --test-size {test_size}
+      --random-state {random_state}
+      --experiment-name "{experiment_name}"
+
+  evaluate:
+    parameters:
+      model_uri: {type: str}
+      test_size: {type: float, default: 0.2}
+      random_state: {type: int, default: 42}
+      experiment_name: {type: str, default: "mlflow-demo"}
+    command: >
+      python evaluate.py
+      --model-uri "{model_uri}"
+      --test-size {test_size}
+      --random-state {random_state}
+      --experiment-name "{experiment_name}"
