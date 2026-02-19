@@ -1,5 +1,8 @@
 .venv/
 mlruns/
+artifacts/
+mlflow.db
 __pycache__/
 *.pyc
-pred_plot.png
+*.png
+*.json
